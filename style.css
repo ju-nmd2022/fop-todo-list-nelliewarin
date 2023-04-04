@@ -34,5 +34,6 @@ main {
 }
 
 #listContainer h1 {
+  font-family: cursive;
   padding-left: 1rem;
 }
