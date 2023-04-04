@@ -1,0 +1,38 @@
+html {
+  font-family: sans-serif;
+  background-color: #d5e9ce;
+}
+
+#title {
+  text-align: center;
+  margin-top: 5vh;
+}
+
+#title h1 {
+  text-transform: uppercase;
+}
+
+aside {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin-top: 2vh;
+}
+
+#listContainer {
+  background-color: white;
+  border-style: groove;
+  border-color: #c8dec0;
+  width: 50vw;
+  height: 70vh;
+}
+
+#listContainer h1 {
+  padding-left: 1rem;
+}
