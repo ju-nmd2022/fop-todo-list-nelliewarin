@@ -19,6 +19,24 @@ aside {
   margin-top: 5vh;
 }
 
+#inputField {
+  width: 40vw;
+  height: 2rem;
+  margin-left: 1.7rem;
+  border: none;
+}
+
+::placeholder {
+  padding-left: 1rem;
+}
+
+#addButton {
+  width: 1.5rem;
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+}
+
 main {
   display: flex;
   justify-content: center;
@@ -28,12 +46,17 @@ main {
 #listContainer {
   background-color: white;
   border: 3px solid #788b71;
-  width: 50vw;
+  width: 40vw;
 }
 
 #listContainer h1 {
   font-family: cursive;
   padding-left: 1rem;
+}
+
+ul {
+  padding: 0;
+  margin: 0 1rem;
 }
 
 ul li {
@@ -44,6 +67,7 @@ ul li {
 }
 
 ul li input {
+  margin: 0;
   height: 1rem;
   width: 1rem;
 }
@@ -59,4 +83,8 @@ ul li input:checked {
 ul li p {
   padding-left: 1rem;
   font-weight: bold;
+}
+
+ul li img {
+  width: 1.5rem;
 }

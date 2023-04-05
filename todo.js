@@ -18,13 +18,21 @@ addButtonElement.addEventListener("click", () => {
   checkBox.type = "radio";
   checkBox.checked = false;
 
+  const removeBox = document.createElement("img");
+  removeBox.src = "cross.png";
+  removeBox.addEventListener("click", () => {
+    listElement.removeChild(todoList);
+  })
+
   checkBox.addEventListener("click", () => {
     checkBox.checked = true;
     todoParagraph.style.fontWeight = "normal";
+    todoParagraph.style.textDecoration = "line-through";
   });
 
   todoList.appendChild(checkBox);
   todoList.appendChild(todoParagraph);
+  todoList.appendChild(removeBox);
   listElement.appendChild(todoList);
 
   inputFieldElement.value = "";
