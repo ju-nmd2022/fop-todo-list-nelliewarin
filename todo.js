@@ -8,7 +8,7 @@ collectLocalStorage();
 
 addButtonElement.addEventListener("click", () => {
   createNewAssignment();
-  showAllAssignments();
+  renderList();
   inputFieldElement.value = "";
 });
 
@@ -44,7 +44,7 @@ function showAllAssignments(todo) {
   removeBox.src = "cross.png";
 
   removeBox.addEventListener("click", () => {
-    clearLocalStorage(todoParagraph.innerText);
+    clearLocalStorage(todo);
     renderList();
   });
 
@@ -84,7 +84,7 @@ function clearLocalStorage(todo) {
 //--------------------------------------------
 
 function renderList() {
-  listElement.innerHTML = "";
+  listElement.textContent = "";
   todoArray.forEach((todo) => {
     showAllAssignments(todo);
   });
