@@ -12,6 +12,7 @@ addButtonElement.addEventListener("click", () => {
   inputFieldElement.value = "";
 });
 
+//pushing the assingment into the array
 function createNewAssignment() {
   assignment = inputFieldElement.value;
   todoArray.push(assignment);
@@ -28,6 +29,7 @@ function showAllAssignments(todo) {
 
   //--------------------------------------------
 
+  //making the checkbox and chaning look when checked = true
   const checkBox = document.createElement("input");
   checkBox.type = "radio";
   checkBox.checked = false;
@@ -40,6 +42,7 @@ function showAllAssignments(todo) {
 
   //--------------------------------------------
 
+  //making the remove button and clearing local stroadge when clicked
   const removeBox = document.createElement("img");
   removeBox.src = "cross.png";
 
@@ -58,11 +61,13 @@ function showAllAssignments(todo) {
 
 //--------------------------------------------
 
+// turn the objects into string so it can be saved  local storage
 function saveToLocalStorage() {
   let todoArrayStringified = JSON.stringify(todoArray);
   localStorage.setItem("assigmentsKey", todoArrayStringified);
 }
 
+// turn string back to array with parse
 function collectLocalStorage() {
   todoArrayStringified = localStorage.getItem("assigmentsKey");
 
@@ -73,6 +78,7 @@ function collectLocalStorage() {
   }
 }
 
+// remove one object in array with splice
 function clearLocalStorage(todo) {
   let index = todoArray.findIndex((todoTask) => todoTask === todo);
   if (index > -1) {
@@ -83,6 +89,7 @@ function clearLocalStorage(todo) {
 
 //--------------------------------------------
 
+// going through all list parts
 function renderList() {
   listElement.textContent = "";
   todoArray.forEach((todo) => {
