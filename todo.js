@@ -14,8 +14,12 @@ addButtonElement.addEventListener("click", () => {
 
 //pushing the assingment into the array
 function createNewAssignment() {
-  assignment = inputFieldElement.value;
-  todoArray.push(assignment);
+  let assignmentObject = {
+    assignmentName: inputFieldElement.value,
+    checked: false,
+  };
+
+  todoArray.push(assignmentObject);
   saveToLocalStorage();
 }
 
@@ -25,19 +29,19 @@ function showAllAssignments(todo) {
   const todoList = document.createElement("li");
   const todoParagraph = document.createElement("p");
 
-  todoParagraph.innerText = todo;
+  todoParagraph.innerText = todo.assignmentName;
 
   //--------------------------------------------
 
   //making the checkbox and chaning look when checked = true
   const checkBox = document.createElement("input");
   checkBox.type = "radio";
-  checkBox.checked = false;
+  checkBox.checked = todo.checked;
 
   checkBox.addEventListener("click", () => {
-    checkBox.checked = true;
-    todoParagraph.style.fontWeight = "normal";
-    todoParagraph.style.textDecoration = "line-through";
+    todo.checked = true;
+
+    saveToLocalStorage();
   });
 
   //--------------------------------------------
